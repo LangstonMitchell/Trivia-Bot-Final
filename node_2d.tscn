@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://bauju20ry6oa3"]
+
+[ext_resource type="FontFile" uid="uid://dwhggru3wn88y" path="res://Conthrax-SemiBold.otf" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://c60tuoeb50af7" path="res://label.gd" id="1_wtcfe"]
+[ext_resource type="VideoStream" uid="uid://bhbtvo5sqfme2" path="res://Videos/Dusky 3D Tower Loop.ogv" id="3_epypp"]
+[ext_resource type="Script" uid="uid://dophcneesndl8" path="res://video_stream_player.gd" id="4_0hol4"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -486.0625
+offset_top = -30.5
+offset_right = 486.0625
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_0e48y")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+script = ExtResource("1_wtcfe")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -598.0
+offset_top = -338.0
+offset_right = 596.0
+offset_bottom = 338.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("3_epypp")
+autoplay = true
+expand = true
+loop = true
+script = ExtResource("4_0hol4")
+
+[node name="Timer" type="Timer" parent="VideoStreamPlayer"]
+wait_time = 60.0
+autostart = true
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.5
+offset_top = -320.5
+offset_right = 123.5
+offset_bottom = -277.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_0e48y")
+theme_override_font_sizes/font_size = 35
+text = "Question:"
+uppercase = true
+
+[connection signal="timeout" from="VideoStreamPlayer/Timer" to="VideoStreamPlayer" method="_on_timer_timeout"]

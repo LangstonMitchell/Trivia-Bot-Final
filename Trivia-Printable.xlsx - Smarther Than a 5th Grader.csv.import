@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bas8elwj78a3v"
+
+[deps]
+
+files=["res://Trivia-Printable.xlsx - Smarther Than a 5th Grader.MONGOOSES.translation"]
+
+source_file="res://Trivia-Printable.xlsx - Smarther Than a 5th Grader.csv"
+dest_files=["res://Trivia-Printable.xlsx - Smarther Than a 5th Grader.MONGOOSES.translation"]
+
+[params]
+
+compress=false
+delimiter=0
