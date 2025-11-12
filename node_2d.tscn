@@ -70,6 +70,8 @@ theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("1_0e48y")
 theme_override_font_sizes/font_size = 35
 text = "Question:"
+horizontal_alignment = 1
+vertical_alignment = 1
 uppercase = true
 
 [connection signal="timeout" from="VideoStreamPlayer/Timer" to="VideoStreamPlayer" method="_on_timer_timeout"]
